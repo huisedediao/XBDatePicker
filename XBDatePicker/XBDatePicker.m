@@ -56,7 +56,7 @@
             make.centerY.equalTo(topView);
             make.left.equalTo(topView);
             make.height.equalTo(topView);
-            make.width.mas_equalTo(kScreenWidth);
+            make.width.mas_equalTo(100);
         }];
         btn.enum_contentSide = XBBtnSideLeft;
         btn.f_spaceToContentSide = GWidthFactorFun(10);
@@ -76,7 +76,7 @@
             make.centerY.equalTo(topView);
             make.right.equalTo(topView);
             make.height.equalTo(topView);
-            make.width.mas_equalTo(kScreenWidth);
+            make.width.mas_equalTo(100);
         }];
         btn.enum_contentSide = XBBtnSideRight;
         btn.f_spaceToContentSide = GWidthFactorFun(10);
