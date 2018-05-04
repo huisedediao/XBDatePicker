@@ -33,8 +33,8 @@
 		F125BA9E209C4D8400C7D17E /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = F125BA92209C4D8400C7D17E /* MASViewConstraint.m */; };
 		F125BA9F209C4D8400C7D17E /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = F125BA93209C4D8400C7D17E /* MASViewAttribute.m */; };
 		F125BAA0209C4D8400C7D17E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F125BA94209C4D8400C7D17E /* README.md */; };
-		F125BAA4209C4DD200C7D17E /* XBButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F125BAA2209C4DD100C7D17E /* XBButton.m */; };
 		F125BAA9209C4F1500C7D17E /* XBDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = F125BAA8209C4F1500C7D17E /* XBDatePicker.m */; };
+		F125BAAE209C53A400C7D17E /* XBButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F125BAAC209C53A400C7D17E /* XBButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,12 +111,12 @@
 		F125BA92209C4D8400C7D17E /* MASViewConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewConstraint.m; sourceTree = "<group>"; };
 		F125BA93209C4D8400C7D17E /* MASViewAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewAttribute.m; sourceTree = "<group>"; };
 		F125BA94209C4D8400C7D17E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		F125BAA2209C4DD100C7D17E /* XBButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBButton.m; sourceTree = "<group>"; };
-		F125BAA3209C4DD100C7D17E /* XBButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBButton.h; sourceTree = "<group>"; };
 		F125BAA5209C4E1900C7D17E /* LeftBtnRightBtnViewConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeftBtnRightBtnViewConfig.h; sourceTree = "<group>"; };
 		F125BAA7209C4F1500C7D17E /* XBDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBDatePicker.h; sourceTree = "<group>"; };
 		F125BAA8209C4F1500C7D17E /* XBDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBDatePicker.m; sourceTree = "<group>"; };
 		F125BAAA209C4F3700C7D17E /* XBDatePickerConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XBDatePickerConfig.h; sourceTree = "<group>"; };
+		F125BAAC209C53A400C7D17E /* XBButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBButton.m; sourceTree = "<group>"; };
+		F125BAAD209C53A400C7D17E /* XBButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBButton.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,8 +167,8 @@
 		F125B9BD209C4AA300C7D17E /* XBDatePicker */ = {
 			isa = PBXGroup;
 			children = (
+				F125BAAB209C53A400C7D17E /* XBButton */,
 				F125BAA6209C4F1500C7D17E /* XBDatePicker */,
-				F125BAA1209C4DD100C7D17E /* XBButton */,
 				F125BA78209C4D8400C7D17E /* Masonry */,
 				F125BA06209C4D3C00C7D17E /* LeftBtnRightBtnView */,
 				F125B9F0209C4AB700C7D17E /* XBAlertViewBase */,
@@ -273,16 +273,6 @@
 			path = Masonry;
 			sourceTree = "<group>";
 		};
-		F125BAA1209C4DD100C7D17E /* XBButton */ = {
-			isa = PBXGroup;
-			children = (
-				F125BAA2209C4DD100C7D17E /* XBButton.m */,
-				F125BAA3209C4DD100C7D17E /* XBButton.h */,
-			);
-			name = XBButton;
-			path = ../../../git/github/XBButton/DrawTest/DrawTest/XBButton;
-			sourceTree = "<group>";
-		};
 		F125BAA6209C4F1500C7D17E /* XBDatePicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -291,6 +281,15 @@
 				F125BAAA209C4F3700C7D17E /* XBDatePickerConfig.h */,
 			);
 			path = XBDatePicker;
+			sourceTree = "<group>";
+		};
+		F125BAAB209C53A400C7D17E /* XBButton */ = {
+			isa = PBXGroup;
+			children = (
+				F125BAAC209C53A400C7D17E /* XBButton.m */,
+				F125BAAD209C53A400C7D17E /* XBButton.h */,
+			);
+			path = XBButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -439,7 +438,6 @@
 				F125B9C3209C4AA300C7D17E /* ViewController.m in Sources */,
 				F125B9FE209C4AB700C7D17E /* XBAlertViewBase+Queue.m in Sources */,
 				F125BA9B209C4D8400C7D17E /* NSArray+MASAdditions.m in Sources */,
-				F125BAA4209C4DD200C7D17E /* XBButton.m in Sources */,
 				F125BAA9209C4F1500C7D17E /* XBDatePicker.m in Sources */,
 				F125BA9C209C4D8400C7D17E /* View+MASAdditions.m in Sources */,
 				F125B9FD209C4AB700C7D17E /* XBAlertViewBase.m in Sources */,
@@ -449,6 +447,7 @@
 				F125BA09209C4D3C00C7D17E /* LeftBtnRightBtnView.m in Sources */,
 				F125BA00209C4AB700C7D17E /* XBAlertViewManager.m in Sources */,
 				F125BA97209C4D8400C7D17E /* ViewController+MASAdditions.m in Sources */,
+				F125BAAE209C53A400C7D17E /* XBButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
