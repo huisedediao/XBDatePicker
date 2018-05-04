@@ -10,8 +10,10 @@
 
 @class XBDatePicker;
 
-typedef void (^XBDatePickerDoneBlock)(NSString *timeStr);
+typedef void (^XBDatePickerDoneBlock)(NSDate *selectedDate);
 
 @interface XBDatePicker : XBAlertViewBase
+@property (nonatomic,strong) NSDate *date;
+@property (nonatomic,strong) UIDatePicker *datePicker;
 @property (nonatomic,copy) XBDatePickerDoneBlock bl_done;
 @end

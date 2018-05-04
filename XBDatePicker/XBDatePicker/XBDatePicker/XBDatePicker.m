@@ -7,16 +7,19 @@
 //
 
 #import "XBDatePicker.h"
-#import "ViewForSectionHeader.h"
+#import "LeftBtnRightBtnView.h"
+#import "Masonry.h"
+#import "XBDatePickerConfig.h"
 
 #define topViewHeight (GHeightFactorFun(30))
 #define datePickerHeight (GHeightFactorFun(150))
 #define selfHegith (datePickerHeight + topViewHeight + SafeAreaBottomHeight)
 
-#define dateFormat @"yyyy年MM月dd日"
-
 @interface XBDatePicker ()
-@property (nonatomic,strong) UIDatePicker *datePicker;
+{
+    NSDate *_date;
+    NSString *_dateFormatStr;
+}
 @property (nonatomic,strong) XBButton *btn_left;
 @property (nonatomic,strong) XBButton *btn_right;
 @end
@@ -27,6 +30,7 @@
 {
     WEAK_SELF
     self.backgroundColor = XBColor_white;
+    self.backgroundViewColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
     self.hideWhileTouchOtherArea = NO;
     self.showLayoutBlock = ^(XBAlertViewBase *alertView) {
         [alertView mas_remakeConstraints:^(MASConstraintMaker *make) {
@@ -59,10 +63,10 @@
             make.width.mas_equalTo(100);
         }];
         btn.enum_contentSide = XBBtnSideLeft;
-        btn.f_spaceToContentSide = GWidthFactorFun(10);
+        btn.f_spaceToContentSide = kLeftSpaceToScreen;
         btn.color_titleNormal = XBColor_gray_136_136_136;
         btn.font_title = UIFont(GWidthFactorFun(10));
-        btn.str_titleNormal = XBText_取消;
+        btn.str_titleNormal = NSLocalizedString(@"取消", nil);
         btn.bl_click = ^(XBButton *weakBtn) {
             [weakSelf hidden];
         };
@@ -79,19 +83,16 @@
             make.width.mas_equalTo(100);
         }];
         btn.enum_contentSide = XBBtnSideRight;
-        btn.f_spaceToContentSide = GWidthFactorFun(10);
+        btn.f_spaceToContentSide = kLeftSpaceToScreen;
         btn.color_titleNormal = XBColor_gray_136_136_136;
         btn.font_title = UIFont(GWidthFactorFun(10));
-        btn.str_titleNormal = XBText_确定;
+        btn.str_titleNormal = NSLocalizedString(@"确定", nil);
         btn.bl_click = ^(XBButton *weakBtn) {
             [weakSelf hidden];
             NSDate *date = weakSelf.datePicker.date;
-            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-            [dateFormatter setDateFormat:dateFormat];
-            NSString *string = [dateFormatter stringFromDate:date];
             if (weakSelf.bl_done)
             {
-                weakSelf.bl_done(string);
+                weakSelf.bl_done(date);
             }
         };
         btn;
@@ -108,14 +109,29 @@
         datePicker.locale = [NSLocale localeWithLocaleIdentifier:@"zh"];
         //显示方式是只显示年月日
         datePicker.datePickerMode = UIDatePickerModeDate;
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        //设置默认显示的日期
-        [dateFormatter setDateFormat:dateFormat];
-        NSDate *date = [dateFormatter dateFromString:@"1990年01月01日"];
-        [datePicker setDate:date];
+        
+        [datePicker setDate:self.date];
         datePicker;
     });
 
 }
+
+- (void)setDate:(NSDate *)date
+{
+    _date = date;
+    [self.datePicker setDate:date];
+}
+
+- (NSDate *)date
+{
+    if (_date == nil)
+    {
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:birthdayDateFormat];
+        _date = [dateFormatter dateFromString:@"1990年01月01日"];
+    }
+    return _date;
+}
+
 
 @end
